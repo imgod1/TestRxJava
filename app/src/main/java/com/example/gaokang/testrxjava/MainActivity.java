@@ -84,6 +84,8 @@ public class MainActivity extends AppCompatActivity {
                 Observable.just("Hello no name").subscribe(new Action1<String>() {
                     @Override
                     public void call(String s) {
+                        Snackbar.make(toolbar, "Subscriber call：" + s, Snackbar.LENGTH_SHORT)
+                                .setAction("Action", null).show();
                         Log.e("main", "action1 onNext：" + s);
                     }
                 });
